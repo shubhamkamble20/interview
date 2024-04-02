@@ -236,3 +236,9 @@ In VPC, DHCP (Dynamic Host Configuration Protocol) plays a vital role in automat
 What is Active and Passive health checks?
 Active checks: Proactive, customizable, faster detection.
 Passive checks: Reactive, less overhead, slower detection.
+
+What is differece between Git Merge and Git Rebase?
+Git Merge:-
+Combines the changes from one branch into another branch.Creates a new commit that combines the changes from the merged branch with the target branch.
+Git Rebase:-
+Integrates changes from one branch into another by moving or replaying commits from the source branch onto the tip of the target branch.

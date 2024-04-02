@@ -236,3 +236,6 @@ In VPC, DHCP (Dynamic Host Configuration Protocol) plays a vital role in automat
 What is Active and Passive health checks?
 Active checks: Proactive, customizable, faster detection.
 Passive checks: Reactive, less overhead, slower detection.
+
+git rebase vs merge
+git reset and revert

@@ -1,0 +1,97 @@
+What is Aws?
+AWS stands for Amazon Web Services. It's a cloud computing platform offered by Amazon that provides various on-demand IT resources like computing power, storage, databases, and more.
+
+What is EC2?
+EC2 stands for Amazon Elastic Compute Cloud. It's a service offered within the AWS platform that specifically provides virtual machines (VMs). These VMs, called instances, act like traditional computers but run on Amazon's infrastructure.
+
+How to create a snapshot?
+1.Log in to the AWS Management Console and navigate to the EC2 service.
+2.Go to the Volumes section under the EBS menu.
+3.Select the volume you want to create a snapshot of by clicking the checkbox next to it.
+4.Click the Actions menu and choose Create Snapshot.
+5.Optionally, provide a description for the snapshot to help with identification later.
+6.Click Create.
+
+What is cross region and same region s3 bucket replication?
+S3 bucket replication in AWS allows you to automatically copy objects from one S3 bucket to another, either within the same region (Same-Region Replication - SRR) or across different regions (Cross-Region Replication - CRR).
+
+In tar command cvz stands for?
+c: Create an archive,v: Verbose this enables verbose output,z: Gzip compression this instructs tar to compress the created archive.
+
+What is key pair?
+key pair is a set of two mathematically linked keys used in cryptography for
+encryption and decryption purposes.
+Public key: This key is freely distributed and available to anyone. It's used to encrypt information.
+Private key: This key is kept secret and should never be shared with anyone. It's used to decrypt information that has been encrypted with the corresponding public key.
+
+What is public subnet and private subnet?
+Public and private subnets are two different types of subnets used within the Amazon Virtual Private Cloud (VPC) in AWS.
+A Public subnet is a subnet within a VPC that has a direct route to the internet gateway. This allows resources deployed in the public subnet to be directly accessible from the internet.
+A Private subnet is a subnet within a VPC that is not route to the internet gateway. You can provide internet connectivity to private subnet by NAT gateway.
+
+What is Shebang?
+shebang, also known as hashbang or pound-bang, is a special line at the beginning of some executable files, particularly shell scripts.
+
+What is iaas paas saas?
+IaaS (Infrastructure as a Service)
+IaaS provides the underlying infrastructure for running applications in the cloud. This includes virtualized servers, storage, networking, and other core resources.
+PaaS (Platform as a Service):
+PaaS provides a development and deployment platform in the cloud. It includes servers, storage, databases, operating systems, and development tools.
+SaaS (Software as a Service):
+SaaS provides ready-to-use software applications delivered through the internet. Users access the software through a web browser or mobile app, without installing or managing any software on their local devices.
+
+What is 3 tier architecture?
+3-tier architecture is a software design pattern that organizes an application into three distinct layers:
+Presentation Tier (UI): This is the topmost layer and acts as the user interface (UI). It interacts directly with the user and presents information or accepts input. The UI can be a web application, mobile app, desktop etc.
+Business Logic Tier (Logic): This layer sits in the middle and is responsible for the application's core logic. It processes user input, interacts with the data tier, and performs calculations or business rules.
+Data Tier (Data): This is the bottommost layer and is responsible for storing and managing data. It can be a database, file system, or any other data storage mechanism.
+
+What is nslookup?
+nslookup is a command-line tool used in Unix-like operating systems and Windows for translate domain names into IP addresses and vice versa.
+
+What is elastic IP?
+In AWS an Elastic IP is a static public IPv4 address designed for dynamic cloud computing environments.
+
+What is reverse proxy nginx?
+reverse proxy is an intermediary server that sits in front of one or more backend servers. It receives requests from clients like web browsers, mobile apps, etc. and forwards them to the appropriate backend server.
+
+Can you replicate s3 bucket and how?
+Yes we can replicate s3 bucket within the same region or cross region.
+Setting up S3 Replication:
+Log in to the AWS Management Console and navigate to the S3 service.
+Select the source bucket you want to replicate.
+Click on the "Manage bucket replication" button.
+Choose "Create replication rule".
+Configure the replication rule.
+Review and create the rule.
+
+What is Zombie Processes in Linux?
+A zombie process in Linux is a process that has completed its execution but still has an entry in the process table. This means the process itself is no longer running, but the operating system hasn't yet cleaned up its resources. 
+
+How to check logs of terminated ec2 server?
+If you have CloudTrail logs enabled in your account and configured it to log events related to EC2 before the instance termination, then you might be able to find logs in CloudTrail logs.
+
+What is compiler and Interpreter?
+Both compilers and interpreters translate code written in a high-level programming language (like Python, Java, or JavaScript) into a form that the computer can understand and execute.
+
+What is Amazon EBS encryption?
+Amazon EBS encryption is a security feature offered by AWS that allows you to encrypt the data stored on your EBS volumes. This encryption helps protect your data at rest, meaning when it's not actively being used.
+
+List the volume types of ebs?
+SSD-backed volumes :- io2,io1,gp2,gp3
+HDD-backed volumes
+Standard magnetic volumes
+
+AWS CLI commands:-
+snap install aws-cli --classic - to install aws cli in ubuntu.
+aws s3 ls - to see all buckets.
+aws s3 ls s3://bucket-name - to see objects of bucket.
+aws s3 rm --recursive s3://bucket-name/ - Emptying an S3 bucket if versioning disabled.
+aws s3api delete-objects --bucket bucket-name --delete all - versioning enabled.
+aws ec2 describe-instances --region us-east-1 - to see all ec2 instances.
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 What is Aws?
-AWS stands for Amazon Web Services. It's a cloud computing platform offered by Amazon that provides various on-demand IT resources like computing power, storage, databases, and more.
+AWS stands for Amazon Web Services. It's a cloud computing platform offered by Amazonthat provides various on-demand IT resources like computing power, storage, databases, and more.
 
 What is EC2?
 EC2 stands for Amazon Elastic Compute Cloud. It's a service offered within the AWS platform that specifically provides virtual machines (VMs). These VMs, called instances, act like traditional computers but run on Amazon's infrastructure.
@@ -55,6 +55,27 @@ In AWS an Elastic IP is a static public IPv4 address designed for dynamic cloud 
 What is reverse proxy nginx?
 reverse proxy is an intermediary server that sits in front of one or more backend servers. It receives requests from clients like web browsers, mobile apps, etc. and forwards them to the appropriate backend server.
 
+What is OSI model and explain it's layers?
+The OSI model is a conceptual framework that divides network communication into seven layers that are:-
+1)Physical Layer-
+Transmits raw bit stream over the physical medium.
+2)Data Link Layer-
+Defines the format of data on the network.
+3)Network Layer-
+Decides which physical path the data will take.
+4)Transport Layer-
+Transmits data using transmission protocols including TCP and UDP.
+5)Session Layer- Maintains connections and is responsible for controlling ports and sessions.
+6)Presentation Layer-
+Ensures that data is in a usable format and is where data encryption occurs.
+7)Application Layer-
+Human-computer interaction layer, where applications can access the network services.
+
+What is differnce between OSI and TCP Model?
+The OSI (Open Systems Interconnection) and TCP/IP (Transmission Control Protocol/Internet Protocol) models are both frameworks for understanding network communication. However, they differ in their purpose and design.
+OSI Model:- The OSI model is a conceptual framework that divides network communication into seven layers. It provides a general idea of how data travels between devices on a network. The OSI model is not a specific protocol suite, but rather a reference model that can be used to develop different network protocols.
+TCP Model:- The TCP/IP model, on the other hand, is a four-layer model that is the foundation of the internet. It is a suite of protocols that define how data is transmitted between devices on a network. The TCP/IP model is more specific than the OSI model and is widely used in network communication today.
+
 Can you replicate s3 bucket and how?
 Yes we can replicate s3 bucket within the same region or cross region.
 Setting up S3 Replication:
@@ -90,8 +111,128 @@ aws s3 rm --recursive s3://bucket-name/ - Emptying an S3 bucket if versioning di
 aws s3api delete-objects --bucket bucket-name --delete all - versioning enabled.
 aws ec2 describe-instances --region us-east-1 - to see all ec2 instances.
 
+What are the state of EC2 instance?
+An EC2 instance can go through various states throughout its lifecycle that are:-
+Pending: The instance is starting up and getting ready to run.
+Running: The instance is operational and available for use.
+Stopping: The instance is being shut down gracefully.
+Stopped: The instance is turned off but can be restarted later.
+Shutting-down: The instance is being terminated.
+Terminated: The instance is permanently deleted and cannot be restarted.
 
+How to configure Route53 in AWS?
+Configuring Route 53 in AWS involves creating a hosted zone and then adding resource records to direct traffic to your resources.
+1.Create a Hosted Zone:
+A hosted zone represents your domain name in Route 53.
+Go to the Route 53 service in the AWS Management Console and click on "Create Hosted Zone".
+Enter your domain name.
+Choose "Public hosted zone".
+Click "Create Hosted Zone".
+2.Add Resource Records:
+Resource records define how Route 53 routes traffic for different parts of your domain.
+Maps a domain name to an IP address.
+Points a domain name to another domain name
+Routes traffic to AWS resources like Elastic Load Balancers.
 
+How can you see VPC logs in vpc management console?
+Open the VPC console and navigate to either your VPCs or subnets section.
+Select the VPC or subnet for which you want to capture traffic data.
+Click on the "Flow Logs" tab.
+Choose a name and filter for the traffic you want to capture.
+Select CloudWatch Logs or S3 bucket as the destination for the flow logs.
 
+What is difference between process and thread in linux?
+Process: An independent program execution instance with its own memory space and resources. It's like a container running a program.
+Thread: A lightweight unit of execution within a process. A process can have multiple threads, sharing the same memory space and resources.
 
+How to create Lifecycle in S3 bucket?
+Log in to your AWS Management Console and navigate to the S3 service.
+From the list of buckets, click on the one where you want to implement the lifecycle rules.
+Click on the "Management" tab for the selected bucket.
+Click the button "Create lifecycle rule."
+Assign a descriptive name for your rule and time period for moving object from one class to another class.
 
+Difference between persistence non persistence volume in AWS?
+Persistence Volumes:
+Maintained data after instance termination or restart.
+Separate storage services (EBS, EFS).
+Volumes can be attached/detached from different instances.
+Higher cost volume.
+Non-Persistent Volumes:
+Lost data after instance termination or restart.
+Local disks of the EC2 instance.
+Volume is Limited to the instance it's attached to.
+Lower cost volume.
+
+What is mean by Region Specific in autoscaling?
+Auto Scaling can manage resources (EC2 instances) and their scaling behavior within a chosen AWS Region. It cannot manage resources across different regions.
+While Region-specific, Auto Scaling can leverage multiple Availability Zones within the same region. This enhances fault tolerance and redundancy. If one AZ becomes unavailable, Auto Scaling can launch new instances in healthy AZs to maintain application capacity.
+
+What is Cronjob?
+A cron job is a task scheduling tool used on linux operating systems. It allows you to automate the execution of commands or scripts at specific times or intervals.
+
+How to Recover EC2 instance terminated accidently?
+Unfortunately, recovering a terminated EC2 instance directly is not possible in AWS.
+If you had a recent AMI backup of the terminated instance, you can launch a new instance from that AMI. This AMI will contain the configuration and applications installed at the time the AMI was created.
+
+How to check the log of terminated EC2?
+If the termination was intentional and happened within the last 90 days, you can check CloudTrail logs for clues. CloudTrail is an AWS service that logs API calls made to your AWS account.
+
+What is AWS IAM?
+IAM stands for Identity and Access Management.It is service provided by AWS.
+IAM has a specific way of dealing with giving access and consent control within the organization.You can monitor the activities of IAM users. If there is any violation, you can remove Access for the IAM user.
+
+What are the features of IAM?
+There are many features of IAM like:-
+1.Identity federation.
+2.Secure Access to AWS resources.
+3.Granular permissions
+4.Multi-factor authentication (MFA).
+5.Integrated with many AWS services.
+6.Free to use.
+
+What is command to download file from linux server to your local machine?
+scp -i /path/to/your/key.pem user@your-aws-instance-ip:/path/to/remote/file /path/to/local/destination
+example:-
+scp -i "batch-23.pem" ubuntu@ec2-65-1-131-200.ap-south-1.compute.amazonaws.com:/var/www/html /home/mobaxterm/Desktop/keys
+
+What is Disaster Recovery and RTO/RPO?
+Disaster recovery (DR) is an organization's ability to restore access to IT infrastructure after a disaster, such as a natural disaster, cyber attack, or business disruption.
+RTO(Recovery Time Objective):-
+The RTO is the targeted duration between the event of failure and the point where operation resumes.
+RPO(Recovery Point Objective):-
+The maximum length of time permitted that can be restored.
+The maximun amount of data loss that your application can tolerate.
+
+What is DataCenter in AWS?
+A data-center refers to a physical location where AWS stores its computing infrastructure. This infrastructure includes the servers, storage systems, networking equipment, and other hardware required to run the various AWS cloud services.
+
+What is ARN in aws?
+ARN stands for Amazon Resource Name. It acts as a unique identifier for all the resources you create within the AWS cloud environment. ARNs are essential for referencing specific resources throughout AWS services like IAM policies, Amazon RDS tags, and API calls.
+
+Commands to install package for EFS in ubuntu?
+sudo apt-get install git
+git clone https://github.com/aws/efs-utils
+cd efs-utils
+./build-deb.sh
+sudo apt-get -y install ./build/amazon-efs-utils*deb
+
+What is VPC endpoint?
+VPC endpoints provide a secure and efficient method for private communication between your VPC resources and AWS services, strengthening your cloud security and improving performance.
+
+What is transit gateway in VPC?
+A VPC Transit Gateway is a networking service that functions as a central hub for connecting your VPC and on-premises networks. It operates using a hub-and-spoke model, simplifying network design and management.
+
+What is Public and Private Routing?
+Public routing refers to the process of directing data packets across the public internet. Routers on the internet use public IP addresses to determine the path packets should take to reach their destination.
+Private routing deals with directing data packets within a private network, isolated from the public internet.
+
+What is Low-Latency?
+Low latency refers to the minimal delay experienced in a computer network or system when data travels from a source to a destination and back.
+
+In VPC what is the purpose of DHCP?
+In VPC, DHCP (Dynamic Host Configuration Protocol) plays a vital role in automatically assigning IP addresses, network configuration, streamlining device management, reducing errors, and enhancing scalability for your cloud resources.
+
+What is Active and Passive health checks?
+Active checks: Proactive, customizable, faster detection.
+Passive checks: Reactive, less overhead, slower detection.

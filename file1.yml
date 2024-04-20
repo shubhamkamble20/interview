@@ -1,0 +1,6 @@
+- hosts: ubuntu,amazon
+  become: false
+  
+  tasks:
+  - name: Creating a file
+    file: path=~/batch24.txt state=touch

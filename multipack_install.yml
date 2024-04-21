@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Install multipack on amazon
+      when: ansible_os_family == "RedHat"
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - curl
+        - tree
+        - unzip
+
+    - name: Install multipack on ubuntu
+      when: ansible_os_family == "Debian"
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - curl
+        - tree
+        - unzip

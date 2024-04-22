@@ -1,0 +1,18 @@
+---
+ - name: Installing nginx on ubuntu
+   hosts: ubuntu
+   gather_facts: false
+   tasks:
+     - name: Installing nginx
+       apt:
+         name: nginx
+         state: latest
+       become: true
+       notify: restart_nginx
+
+   handlers:
+     - name: restart_nginx
+       become: true
+       service:
+         name: nginx
+         state: started

@@ -1,0 +1,7 @@
+- name: Install git
+  when: ansible_os_family == "Debian"
+  apt: name=git state=present
+
+- name: Install git
+  when: ansible_os_family == "RedHat"
+  yum: name=git state=present

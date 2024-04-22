@@ -1,0 +1,7 @@
+- name: Install nginx
+  when: ansible_os_family == "Debian"
+  apt: name=nginx state=present
+
+- name: Install httpd
+  when: ansible_os_family == "RedHat"
+  yum: name=httpd state=present

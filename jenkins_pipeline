@@ -1,0 +1,27 @@
+pipeline {
+    agent {
+        node {
+            label 'master'
+        }
+    }
+    stages {
+        stage('Installing Nginx') {
+            steps {
+                sh 'sudo apt update -y'
+                sh 'sudo apt install nginx -y'
+            }
+        }
+        stage('adding Html file') {
+            steps {
+                sh 'echo "This is webserver for nginx..." > index.html'
+                sh 'sudo mv index.html /var/www/html/index.html'
+            }
+        }
+        stage('Status of Nginx') {
+            steps {
+                sh 'sudo systemctl restart nginx'
+                sh 'sudo systemctl status nginx'
+            }
+        }
+    }
+}

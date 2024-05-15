@@ -1,6 +1,0 @@
-- hosts: 172.31.46.240,172.31.32.129
-  become: true
-
-  tasks:
-  - name: Create a file
-    file: path=~/batch23.txt state=touch

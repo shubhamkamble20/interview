@@ -1,0 +1,11 @@
+apiVersion: v1.2
+kind: pod
+metadata:
+  name: my-pod
+  labels:
+      app: flipkart
+      type: front-end
+spec:
+  container:
+   - name: flipkart-pod
+     image: nginx

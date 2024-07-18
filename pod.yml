@@ -9,3 +9,9 @@ spec:
   container:
    - name: flipkart-pod
      image: nginx
+
+
+# kubectl create -f pod-defination.yml
+# kubectl get pod
+# kubectl describe pod nginx
+# kubectl get pods -o wide

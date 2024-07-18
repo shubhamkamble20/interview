@@ -11,7 +11,15 @@ spec:
      image: nginx
 
 
-# kubectl create -f pod-defination.yml
+# kubectl create -f pod-defination.yml   
+#This command creates a pod based on the configuration provided in the pod-defination.yml file.
+
 # kubectl get pod
+#This command retrieves and displays a list of all pods in the current Kubernetes namespace.
+
 # kubectl describe pod nginx
+#This command provides detailed information about a specific pod named nginx.
+
 # kubectl get pods -o wide
+#This command retrieves and displays a list of all pods in the current namespace, 
+#similar to kubectl get pod, but with additional details.

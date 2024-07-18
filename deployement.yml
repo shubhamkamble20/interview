@@ -20,3 +20,16 @@ spec:
     selector:
     matchLabels:
       type: front-end
+
+
+#kubectl apply -f deployment-defination.yml
+#This command applies the configuration specified in the deployment-defination.yml file to the Kubernetes cluster.
+
+#kubectl get deployments
+#This command retrieves and displays a list of all Deployments in the current Kubernetes namespace.
+
+#kubectl rollout status deployment/myapp-deployment
+#This command checks the status of the rollout of a specific Deployment named myapp-deployment.
+
+#kubectl rollout history deployments
+#This command retrieves the rollout history of all Deployments in the current Kubernetes namespace.

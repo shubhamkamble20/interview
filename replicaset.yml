@@ -19,3 +19,13 @@ spec:
           image: nginx
           ports:
             - containerPort: 80
+
+
+# kubectl apply -f repilcaset.yml  
+#This command applies the configuration specified in the replicaset.yml file to the Kubernetes cluster.
+
+# kubectl get rs
+#This command retrieves and displays a list of all ReplicaSets in the current Kubernetes namespace.
+
+# kubectl describe name
+#This command provides detailed information about a specific ReplicaSet identified by its name (<name>).

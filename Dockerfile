@@ -1,6 +1,6 @@
 FROM ubuntu
 
-MAINTAINER "pranilpatel55@gmail.com"
+MAINTAINER "shubhamkamble408@gmail.com"
 
 RUN apt update -y && apt install nginx -y
 
